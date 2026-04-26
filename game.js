@@ -17,26 +17,28 @@
  *    画像パスを一か所で管理。空文字やロード失敗時はフォールバック矩形で描画。
  * ========================================================= */
 const ASSET_PATHS = {
-  playerIdle:   'assets/player_idle.png',
-  playerAttack: 'assets/player_attack.png',
-  playerDead:   'assets/player_dead.png',
-  enemyIdle:    'assets/enemy_idle.png',
-  enemyAttack:  'assets/enemy_attack.png',
-  enemyDead:    'assets/enemy_dead.png',
-  bgImage:      'assets/bg_image.png',
-  slashEffect:  'assets/slash_effect.png',
+  playerIdle:    'assets/player_idle.png',
+  playerAttack:  'assets/player_attack.png',
+  playerDead:    'assets/player_dead.png',
+  giraiSet:      'assets/girai_set.png',
+  enemyIdle:     'assets/enemy_idle.png',
+  enemyAttack:   'assets/enemy_attack.png',
+  enemyDead:     'assets/enemy_dead.png',
+  bgImage:       'assets/bg_image.png',
+  slashEffect:   'assets/slash_effect.png',
 };
 
 /** フォールバック色（キー名 → CSS色文字列） */
 const FALLBACK_COLORS = {
-  playerIdle:   '#4a90d9',
-  playerAttack: '#f5a623',
-  playerDead:   '#9b9b9b',
-  enemyIdle:    '#d0021b',
-  enemyAttack:  '#ff6b6b',
-  enemyDead:    '#7f8c8d',
-  bgImage:      '#1a1a2e',
-  slashEffect:  '#ffffff',
+  playerIdle:    '#4a90d9',
+  playerAttack:  '#f5a623',
+  playerDead:    '#9b9b9b',
+  giraiSet:      '#4a90d9',
+  enemyIdle:     '#d0021b',
+  enemyAttack:   '#ff6b6b',
+  enemyDead:     '#7f8c8d',
+  bgImage:       '#1a1a2e',
+  slashEffect:   '#ffffff',
 };
 
 /* =========================================================
@@ -542,7 +544,7 @@ function drawGameCharacters(W, H) {
   const playerX = W * 0.04;
   const enemyX  = W - charW - W * 0.04;
 
-  let playerKey = 'playerIdle';
+  let playerKey = 'giraiSet';
   let enemyKey  = 'enemyIdle';
 
   if (game.state === STATE.RESULT) {
