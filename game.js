@@ -21,6 +21,7 @@ const ASSET_PATHS = {
   playerAttack:  'assets/player_attack.png',
   playerDead:    'assets/player_dead.png',
   giraiSet:      'assets/girai_set.png',
+  giraiWin:      'assets/girai_win.png',
   enemyIdle:     'assets/enemy_idle.png',
   enemyAttack:   'assets/enemy_attack.png',
   enemyDead:     'assets/enemy_dead.png',
@@ -34,6 +35,7 @@ const FALLBACK_COLORS = {
   playerAttack:  '#f5a623',
   playerDead:    '#9b9b9b',
   giraiSet:      '#4a90d9',
+  giraiWin:      '#7fff00',
   enemyIdle:     '#d0021b',
   enemyAttack:   '#ff6b6b',
   enemyDead:     '#7f8c8d',
@@ -553,7 +555,7 @@ function drawGameCharacters(W, H) {
       playerKey = 'playerDead';
     } else if (game.playerWon) {
       enemyKey  = 'enemyDead';
-      playerKey = 'playerAttack';
+      playerKey = 'giraiWin';
     } else {
       enemyKey  = 'enemyAttack';
       playerKey = 'playerDead';
