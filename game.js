@@ -225,10 +225,10 @@ function enterWaiting() {
 
 /** WAITING → SIGNAL へ遷移 */
 function enterSignal() {
-  const diff = DIFFICULTIES[game.difficultyIndex];
+  const difficulty = DIFFICULTIES[game.difficultyIndex];
   game.state         = STATE.SIGNAL;
   game.signalTime    = performance.now();
-  game.cpuReactionMs = (diff.cpuMin + Math.random() * (diff.cpuMax - diff.cpuMin)) * 1000;
+  game.cpuReactionMs = (difficulty.cpuMin + Math.random() * (difficulty.cpuMax - difficulty.cpuMin)) * 1000;
   game.waitingTimerId = null;
 }
 
@@ -491,12 +491,12 @@ function renderCutin() {
 
   // パネルが閉じているフェーズのテキスト
   if (t >= 0.35 && t < 0.65) {
-    const diff   = DIFFICULTIES[game.difficultyIndex];
+    const difficulty = DIFFICULTIES[game.difficultyIndex];
     const centerY = H / 2;
     const fs1 = Math.min(W * 0.09, 38);
     const fs2 = Math.min(W * 0.055, 24);
     drawText('刹那の見斬り', W / 2, centerY - fs1 * 0.8, fs1, '#ffe066');
-    drawText(`難易度：${diff.label}`, W / 2, centerY + fs2 * 0.9, fs2, '#ffffff');
+    drawText(`難易度：${difficulty.label}`, W / 2, centerY + fs2 * 0.9, fs2, '#ffffff');
   }
 
   // アニメーション終了 → WAITING へ
